@@ -1,0 +1,201 @@
+\begin{frame}
+\frametitle{Lenguajes de programaci\'on}
+    \begin{itemize}
+        \item Un lenguaje formal  \pause
+        \item Dise\~nado para comunicar instrucciones a la m\'aquina \pause
+        \item Para expresar algoritmos. \pause
+    \end{itemize}
+    \emph{ Un leguaje regular!}
+\end{frame}
+
+\begin{frame}
+    \frametitle{El lenguaje de programaci\'on Python}
+    Dos grupos grandes:
+    \begin{itemize}
+        \item Compilados: C, C++, C\#, $\ldots$
+        \item Interpretados: Ruby, Bash, Perl, Python, $\ldots$
+    \end{itemize}
+    Python es un lenguaje \emph{orientado a objetos} interpretado.
+\end{frame}
+
+
+\note{
+    What is the difference between these two languages:
+    \begin{itemize}
+        \item Does not need to be built
+        \item Interpretetd is much much slower
+        \item Compilation defines the machine.
+    \end{itemize}
+    Explain object orientation
+}
+
+\begin{frame}
+    \frametitle{Python es}
+    \begin{enumerate}
+        \item Simple
+        \item Es ``Free'' (libre) software \pause
+        \item Es de alto nivel \pause
+        \item Portablo \pause
+        \item Interpretado \pause
+        \item Orientado a objetos \pause
+        \item Extensible \pause
+    \end{enumerate}
+\end{frame}
+
+\subsection{Instalando Python}
+
+\begin{frame}
+    \begin{enumerate}
+        \item Vamos a usar Python  en su versi\'on 3
+        \item Vamos a usar jupyter notebook: Usamos el navegador como editor
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Instalando python}
+    \begin{itemize}
+        \item Instalar Anaconda (una distribuci\'on de python. Incluye muchas cosas) 
+        \item \url{https://www.continuum.io/downloads} (Bajar la version 3.5)
+    \end{itemize}
+    Instalar jupyter notebook
+    \begin{itemize}
+        \item Abrir una terminal (En Mac: Utilities->Applications, en Windows: Tecla Win + R, en GNU/Linux)
+        \item coda install jupyter
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Probemos nuestro editor y nuestro lenguaje}
+    \begin{itemize}
+        \item Abrir una terminal (En Mac: Utilities->Applications, en Windows: Tecla Win + R, en GNU/Linux)
+        \item jupyter notebook
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{El primer programa}
+\begin{python}
+    print 'Hello World!'
+\end{python}
+Para ejecutar, apretar \texttt{Shift} y \texttt{Enter}.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Modos de operaci\'on de python}
+    \begin{itemize}
+        \item Interactivo \pause
+        \item Script.
+    \end{itemize}
+\end{frame}
+
+\subsection{Variables, expresiones y tipos}
+
+\begin{frame}
+    \begin{enumerate}
+        \item Valor y tipo \pause
+        \item Variables \pause
+        \item Operaciones \pause
+    \end{enumerate}
+\end{frame}
+
+
+\note{
+    \begin{itemize}
+        \item A esto hacemos detalle. explicamos el concepto de tipo de dato. 
+        \item Enlazar con al representacion binaria de los datos 
+        \item Mencionar las clases, mencionar que todos los tipos son clases y que por lo tanto son extensibles. El concepto de clase mencionamos rapidamente.
+        \item Tenemos que mencionar que pasa con las variables y las operaciones. Sumar cadenas? Sumar enteros? dividir enteros? Representacion de numeros.
+        \item Mencionar que no todos los elementos son identificaroes de variables validos.
+        \item Explicar que hay tipos de variables que son fijos en otros lenguajes.
+    \end{itemize}
+}
+
+\begin{frame}[fragile]
+    Dado:
+    \begin{python}
+        a = 2
+        b = 2.0
+        c = '.'
+    \end{python}
+    Que resulta de:
+    \begin{python}
+        a/3
+        b/3
+        b + c
+    \end{python}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ejercicios}
+    \begin{enumerate}
+        \item Resultado de \texttt{2 / 3} es 0. ?`Por qu\'e?
+        \item Calcular la distancia que recorre una persona que corre a 12 km/h en 2.4 horas.
+        \item Tigo me ofrece 100Gb. de datos a 10Mbps. Si bajo constantemente datos a la maxima velocidad, 
+            ?`En cuanto tiempo llego al l\'imite? (10 Mbps son 10.000.000 bits segundo. 100 Gb son 100.000.000.000.000 bits)
+        \item El vol\'umen de una esfera esta dado por $\frac{4}{3}\pi r^3$ donde r es el radio. Calcular.
+    \end{enumerate}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Cadenas}
+    \begin{itemize}
+        \item Una cadena es una \emph{sequencia} de car\'acteres.
+        \item Uno puede referirse a un car\'acter en particular, empezando a 0 hasta n - 1
+        \item La longitud de la cadena se mide con \texttt{len}
+            \begin{python}
+                a = 'horacio'
+                print a[0]
+                print len(a)
+            \end{python}
+    \end{itemize}
+    \begin{python}
+        print a[1.3]
+        print a[10]
+    \end{python}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Listas}
+\end{frame}
+
+
+\begin{frame}[fragile]
+    \frametitle{Funciones}
+    Una funci\'on es un conjunto de setencias que realiza una tarea espec\'ifica.
+    \begin{python}
+        def calcular_volumen(radio):
+            return (4/3)*3.14*(r**3)
+    \end{python}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ciclos}
+\end{frame}
+
+\note{
+    Definir el concepto de bloque en python y como los espacios determinan esto.\\
+    Explicar las partes de la funcion.
+
+}
+
+\begin{frame}
+    \frametitle{Ejercicios}
+    \begin{enumerate}
+        \item Definir el procedimiento histograma() que produce in histograma. Por ejemplo, histograma(1) es *, histograma(3) es ***
+        \item Definir una funci\'on reverso(cadena) que invierte una cadena. Por ejemplo reverso('horacio') es 'oicaroh'
+        \item Definir una funci\'on capicua(nombre) que retorna 'Si' si nombre es capicua. Una palabra capicua se lee de ambos lados igual, por ejemplo Anana
+        \item Escribir una funci\'on que compute la longitud de una cadena sin usar la funci\'on len.
+        \item Definir una funci\'on que suma los elementos de una lista.
+        \item Definir una funci\'on que multiplica los elementos de una lista.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tarea para la casa:}
+    Leer el cap\'itulo 1.
+\end{frame}

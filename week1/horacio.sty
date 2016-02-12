@@ -1,0 +1,11 @@
+\newcounter{ContadorEjercicios}
+\setcounter{ContadorEjercicios}{0}
+
+\newenvironment{ejercicio}[1]
+{%begin
+	\stepcounter{ContadorEjercicios}
+    \begin{block}{Ejercicio \arabic{ContadorEjercicios}}
+}
+{%end
+    \end{block}
+}

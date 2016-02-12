@@ -1,0 +1,9 @@
+\frametitle{Cadenas}
+    \begin{itemize}
+        \item Una cadena es una \emph{sequencia} de car\'acteres.
+        \item Uno puede referirse a un car\'acter en particular, empezando a 0 hasta n - 1
+            \begin{python}
+                a = 'horacio'
+                print a[0]
+            \end{python}
+    \end{itemize}

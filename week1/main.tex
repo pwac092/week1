@@ -1,0 +1,143 @@
+
+\documentclass[notes]{beamer}       % print frame + notes
+%\documentclass[notes=only]{beamer}   % only notes
+% Replace the \documentclass declaration above
+% with the following two lines to typeset your 
+% lecture notes as a handout:
+%\documentclass{article}
+%\usepackage{beamerarticle}
+\usetheme{default}
+\usepackage{helvet}
+\usepackage[compatibility=false]{caption}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{verbatim}
+
+
+
+\usepackage{horacio}
+
+
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+        language=Python,
+        basicstyle=\ttm,
+        otherkeywords={self},             % Add keywords here
+        keywordstyle=\ttb\color{deepblue},
+        emph={MyClass,__init__},          % Custom highlighting
+        emphstyle=\ttb\color{deepred},    % Custom highlighting style
+        stringstyle=\color{deepgreen},
+        frame=tb,                         % Any extra options here
+        showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+    \pythonstyle
+    \lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+        \pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+
+
+
+\usepackage{tikz}
+\usepackage{wasysym}
+
+\title{Introducci\'on a la Computaci\'on} 
+
+\author{Horacio Caniza Vierci\\horacio.caniza@upa.edu.py}
+\pgfdeclareimage[height=0.5cm]{logo}{./images/logo}
+\logo{\pgfuseimage{logo}}
+
+% Let's get started
+\begin{document}
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+    \tableofcontents
+    % You might wish to add the option [pausesections]
+\end{frame}
+
+%\begin{enumerate}
+%\item ?`Qu\'e es la computaci\'on? \emph{Computer Science} o \emph{Informatics}?
+%\item Historia de la computaci\'on.
+%\item Arquitectura de sistemas.
+%\item Fundamentos matem\'aticos de la computaci\'on:\emph{Das Entscheidungsproblem}.
+%\end{enumerate}
+
+\section{Historia y Sistemas operativos}
+%\input{01_history.tex}
+
+\section{2. El sistema binario}
+%\input{02_binary.tex}
+
+\section{3. Lenguajes de programaci\'on: Conceptos}
+\input{03_concepts.tex}
+
+\section{4. Lenguajes de programaci\'on: Sentencias, procedimientos y funciones}
+
+\section{5. \LaTeX}
+% Generalidades del Tex
+%\input{05_latex.tex}
+
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{Referencias}
+    
+  \begin{thebibliography}{10}
+    
+  \beamertemplatebookbibitems
+  % Start with overview books.
+
+  \bibitem{ACM1}
+      The Joint Task Force for Computing Curricula 2005
+    \newblock {Computing Curricula 2005}.
+    \newblock ACM and IEEE 2005
+ 
+    
+  \beamertemplatearticlebibitems
+  % Followed by interesting articles. Keep the list short. 
+
+  \bibitem{Someone2000}
+    S.~Someone.
+    \newblock On this and that.
+    \newblock {\em Journal of This and That}, 2(1):50--100,
+    2000.
+  \end{thebibliography}
+\end{frame}
+
+
+\end{document}
+
+

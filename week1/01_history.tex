@@ -1,0 +1,156 @@
+
+%1 hr.
+\begin{frame}
+    \frametitle{?`Qu\'e es la computaci\'on?}
+    Computaci\'on es:
+    \begin{itemize}
+        \item Una tarea con objetivo definido que requiera, se beneficie de o cree computadoras \cite{ACM1}
+        \item Entonces... \pause
+            \begin{itemize}
+                \item Construir hardware y software \pause
+                \item Sistemas inteligentes, Comunicaciones, Juegos.  
+                \item $\ldots$
+            \end{itemize}
+    \end{itemize}
+    \pause
+    ?`Y la computadora? ?`Qu\'e es la computadora?
+    \begin{itemize}
+        \item Una computadora no computa (!`no hace aritm\'etica!) \pause
+        \item Una computadora es un \emph{data handler}!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Historia}
+    Babbage and the lot.
+    Insert timeline of computation here and discuss each step
+\end{frame}
+
+\begin{frame}{Dise\~nemos una computadora humana}
+    Tenemos 4 operarios de archivo: \pause
+    \begin{enumerate}
+        \item Lento, pero conoce todas las operaciones. \pause
+        \item 10 veces m\'as r\'apido, pero solo sabe sumar. \pause
+        \item 10 veces m\'as r\'apido, pero no sabe sumar. \pause
+        \item 10 veces m\'as r\'apido, pero no sabe siquiera leer.\pause
+    \end{enumerate}
+    \textcolor{red}{Una computadora general!} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Representaci\'on binaria, \emph{aka} Computers are stupid}
+    \begin{itemize}
+       \item Armemos un sistema con colores: Azul y Rojo.
+       \item !`Ejercicio! 
+           \begin{itemize}
+               \item Dise\~nar un sistema para identificar cuartos en un hotel usando dos colores. Establecer los l\'imites.
+           \end{itemize}
+    \end{itemize}
+\end{frame}
+
+%1.5
+\begin{frame}{Arquitectura de sistemas modernos}
+    \begin{itemize}
+        \item ''First Draft of a Report on the EDVAC`` primavera de 1945. \pause 
+            (\emph{aka} Steve Jobs vend\'ia un producto de m\'as de 60 a\~nos.) \pause
+        \item Cuatro partes:
+            \begin{enumerate}
+                \item La Unidad Aritm\'etico-L\'ogica (ALU): realiza las operaciones.\pause
+                \item La Unidad de Control Central(CU): controla y sincroniza \pause
+                \item La memoria (M): almacena datos e instrucciones \pause
+                \item Dispositivos de Input/Output (IO)
+            \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+% SO 1
+
+\begin{frame}{La computadora moderna}
+    \begin{itemize}
+        \item Uno o m\'as procesadores
+        \item Sonido (entrada y salida), video (posiblemente varios), conexi\'on a redes, autenticaci\'on $\ldots$
+    \end{itemize}
+    \pause
+    Una capa de \emph{software} que presenta un modelo simplificado del \emph{hardware}:
+    \begin{itemize} 
+        \item Windows, Mac, Android, IOS, Blackberry OS. \pause
+        \item GNU/Linux, GNU Hurd, Minix, Solaris, LynxOS, Hp UX, $\ldots$ \pause
+        \item ?`Y las m\'aquinas en una f\'abrica?
+    \end{itemize}
+    \pause
+    \textcolor{red}{Sistema Operativo}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{El sistema operativo como m\'aquina extendida}
+    \begin{itemize}
+        \item?`C\'omo imprimimos en la pantalla? \pause
+        \item La abstracci\'on es esencial para manejar la complejidad. \pause
+        \item Varios niveles de abstracci\'on
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Bajo nivel: C\'odigo m\'aquina} 
+        b8    21 0a 00 00   \#moving "!n" into eax \\
+        a3    0c 10 00 06   \#moving eax into first memory location \\
+        b8    6f 72 6c 64   \#moving "orld" into eax \\
+        a3    08 10 00 06   \#moving eax into next memory location \\
+        b8    6f 2c 20 57   \#moving "o, W" into eax
+        a3    04 10 00 06   \#moving eax into next memory location \\
+        b8    48 65 6c 6c   \#moving "Hell" into eax \\
+        a3    00 10 00 06   \#moving eax into next memory location \\
+        b9    00 10 00 06   \#moving pointer to start of memory location into ecx \\
+        ba    10 00 00 00   \#moving string size into edx \\
+        bb    01 00 00 00   \#moving "stdout" number to ebx \\
+        b8    04 00 00 00   \#moving "print out" syscall number to eax \\
+        cd    80            \#calling the linux kernel to execute our print to stdout \\
+        b8    01 00 00 00   \#moving "sys\_exit" call number to eax \\
+        cd    80            \#executing it via linux sys\_call \\
+        \pause \par
+        \textcolor{red}{Resultado} \pause Imprime 'Hello World' en pantalla.
+\end{frame}
+
+\begin{frame}
+\frametitle{Bajo/Medio nivel: Ensamblador}
+    org  0x100       \\
+    mov  dx, msg      \\
+    mov  ah, 9        \\
+    int  0x21         \\
+    mov  ah, 0x4c     \\
+    int  0x21         \\
+    msg  db 'Hello World', 0x0d, 0x0a, '$'   ; $-terminated message \\
+    \pause \par
+    \textcolor{red}{Resultado} \pause Imprime 'Hello World' en pantalla.
+\end{frame}
+
+\begin{frame}
+\frametitle{Alto nivel: Python}
+    print('Hello World') \\
+\pause
+\textcolor{red}{Resultado} \pause Imprime 'Hello World' en pantalla.
+\end{frame}
+
+\begin{frame}
+    \frametitle{El sistema operativo como administrador de recursos}
+    \begin{block}{Escenario}
+        Estoy jugando Clash of Clans y suena el FaceTime. ?`Qu\'e pasa?
+    \end{block}
+    \pause
+    Multiplexar (Del Latin \emph{Multi} - Muchos, \emph{plexos} - Lados, dobleces)
+    \begin{itemize}
+        \item Tiempo \pause
+        \item Espacio
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    Mi computadora:
+    \begin{itemize}
+        \item GNU/Linux Debian 8: \pause 420.000.000 millones de instrucciones.
+        \item El costo estimado: \pause 19.000 Millones de US\$.  
+    \end{itemize}
+    ?`Y en perspectiva?
+        url{http://www.informationisbeautiful.net/visualizations/million-lines-of-code/}
+\end{frame}
+

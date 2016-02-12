@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.33pt}
+\beamer@sectionintoc {1}{Historia y Sistemas operativos}{3}{0}{1}
+\beamer@sectionintoc {2}{2. El sistema binario}{3}{0}{2}
+\beamer@sectionintoc {3}{3. Lenguajes de programaci\'on: Conceptos}{3}{0}{3}
+\beamer@subsectionintoc {3}{1}{Instalando Python}{16}{0}{3}
+\beamer@subsectionintoc {3}{2}{Variables, expresiones y tipos}{22}{0}{3}
+\beamer@sectionintoc {4}{4. Lenguajes de programaci\'on: Sentencias, procedimientos y funciones}{32}{0}{4}
+\beamer@sectionintoc {5}{5. \LaTeX }{32}{0}{5}
