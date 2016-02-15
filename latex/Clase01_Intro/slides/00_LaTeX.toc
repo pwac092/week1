@@ -1,0 +1,16 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {spanish}
+\beamer@sectionintoc {1}{Generalidades}{3}{0}{1}
+\beamer@sectionintoc {2}{Instalaci\IeC {\'o}n}{8}{0}{2}
+\beamer@sectionintoc {3}{Probando...}{9}{0}{3}
+\beamer@sectionintoc {4}{Ficheros de entrada \LaTeX {}}{10}{0}{4}
+\beamer@sectionintoc {5}{Estructura del fichero de entrada}{14}{0}{5}
+\beamer@sectionintoc {6}{El aspecto del documento}{15}{0}{6}
+\beamer@sectionintoc {7}{Proyectos grandes}{20}{0}{7}
+\beamer@sectionintoc {8}{Usemos \LaTeX }{21}{0}{8}
+\beamer@sectionintoc {9}{Saltos de l\IeC {\'\i }nea y p\IeC {\'a}gina}{24}{0}{9}
+\beamer@sectionintoc {10}{S\IeC {\'\i }mbolos}{27}{0}{10}
+\beamer@sectionintoc {11}{T\IeC {\'\i }tulos, cap\IeC {\'\i }tulos y secciones}{31}{0}{11}
+\beamer@sectionintoc {12}{Notas al pie}{34}{0}{12}
+\beamer@sectionintoc {13}{Estilos de letra}{35}{0}{13}
+\beamer@sectionintoc {14}{Entornos}{36}{0}{14}

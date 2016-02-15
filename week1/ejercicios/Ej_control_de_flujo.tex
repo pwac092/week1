@@ -1,0 +1,286 @@
+
+
+\documentclass[12pt]{article}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+\usepackage{listings}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+        language=Python,
+        basicstyle=\ttm,
+        otherkeywords={self},             % Add keywords here
+        keywordstyle=\ttb\color{deepblue},
+        emph={MyClass,__init__},          % Custom highlighting
+        emphstyle=\ttb\color{deepred},    % Custom highlighting style
+        stringstyle=\color{deepgreen},
+        frame=tb,                         % Any extra options here
+        showstringspaces=false            % 
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+    \pythonstyle
+    \lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+        \pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+
+
+\title{Lista de ejercicios: Ej\_control\_de\_flujo.pdf}
+
+\author{
+    Dr. Horacio Caniza Vierci.\\ 
+    Adaptado de \emph{C - How to program. Deitel \& Deitel. 4th edition}\\
+        \underline{2016}
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+    \begin{enumerate}
+        \item Escribir un programa qeu encuentre el m\'inimo de varios enteros. El primer par\'ametro determina la cantidad
+            de n\'umeros que ser\'an leidos.
+        \item Escribir un programa que calcule la suma de los enteros pares desde 2 hasta 30.
+        \item Escribir un programa que calcule el producto de los enteros impares desde 1 hasta 30.
+
+        \item Escribir un programa que imprima las siguientes formas:
+            \begin{verbatim}
+
+            (a)
+            *
+            **
+            ***
+            ****
+            *****
+            ******
+            *******
+            ********
+
+            (b)
+            ********
+            *******
+            ******
+            *****
+            ****
+            ***
+            **
+            *
+
+            (c)
+            ********
+             *******
+              ******
+               *****
+                ****
+                 ***
+                  **
+                   *
+            \end{verbatim}
+
+        \item Escribir un programa que imprima histogramas. El programa debe recibir cinco n\'umeros (min. 1, m\'ax 30) y por cada n\'umero
+            imprimir una secuencia de tantos * c\'omo valor tenga el n\'umero.
+
+        \item Escribir un programa que determine el valor de $\pi$ usando el hecho  $ \pi = 4 - \frac{4}{3} + \frac{4}{5} - \frac{4}{7} + \frac{4}{9} -\frac{4}{11} + \ldots$. Indicar el n\'umero de t\'erminos necesarios para obtener: 
+            \begin{itemize}
+                \item 3.14
+                \item 3.141
+                \item 3.1415
+                \item 3.14159
+            \end{itemize}
+
+        \item Una tripleta de Pit\'agoras esta compuesta de tres enteros que
+            determinan los lados de un triangulo. Los tres lados debn
+            satisfacer el criterio de que la suma de los cuadrados de dos de
+            los lados debe ser igual al cuadrado del tercero (el teorema de
+            Pit\'agoras). Usar tres loops anidados para encontrar todas las triplas.
+            ?`Es posible encontrar todas las triplas de esta manera?  ?`Cu\'anto tiempo 
+            es necesario para encontrar todos las triplas de esta manera?
+        \item 
+            Las leyes de De Morgan se expresan en castellano:
+            \begin{itemize}
+                \item La negaci\'on de una conjunci\'on es la disjunci\'on de las negaciones.
+                \item La negaci\'on de una disjunci\'on es la conjunci\'no de las negaciones. 
+            \end{itemize}
+            Usar las leyes de De Morgan para encontrar representaciones alternativas para las siguientes expresiones:
+            \begin{python}
+                not( x < 5 ) and not (y > 7)
+                not (a == b) or not (g != 5)
+                not ( (x <= 8) and (y > 4) )
+                not ( (i > 4 ) or ( j <= 6) )
+            \end{python}
+
+        \item Escribir un programa que imprima diamantes de tama\~no arbitrario. 
+           Es suficiente con construir diamantes impares.A modo de ejemplo, el siguiente es un diamante de tama\~no 9:
+            \begin{verbatim}
+                    *
+                   ***
+                  *****
+                 *******
+                *********
+                 *******
+                  *****
+                   ***
+                    *
+            \end{verbatim}
+
+        \item Escribir un programa que imprima una tabla de n\'umeros enteros del 1 al 100 y su respectivo
+            n\'umero romano.
+
+    \item Los conductores estan preocupados por el consumo por kil\'ometro de sus
+        veh\'iculos. Escribur un programa que reciba como entrada el total de
+        kil\'ometros conducido y el total de combustible necesario para llenar el
+        tanque de sus veh\'iculos. El programa tiene que calcular en indicar al
+        ausuario los il\'ometros por litro obtenidos por cada tanque lleno. Al terminar
+        el programa, indicar al usuario el promedio total de consumo en litros y el
+        rendimiento promedio en litros por kil\'ometro.
+        A modo de ejemplo:
+        \begin{verbatim}
+        El combustible cargado (-1 para terminar):  10
+        Km conducidos: 100 km.
+        Km/litro: 10
+
+        El combustible cargado (-1 para terminar):  12
+        Km conducidos: 100 km.
+        Km/litro: 8.3
+
+
+        El combustible cargado (-1 para terminar):  -1
+        Km conducidos: 200 km
+        Km/litro: 9.15
+
+        \end{verbatim}
+
+    \item Escribir un programa que determine si un cliente ha excedido su l\'imite de cr\'edito. Para cada cliente, 
+        los siguientes datos son necesarios:
+        \begin{itemize}
+            \item N\'umero de cuenta
+            \item Balance al 1 del mes
+            \item Total pagado
+            \item Total cr\'edito solicitado por el cliente
+            \item L\'imite de cr\'edito aprobado
+        \end{itemize}
+
+        El programa debe calcular el nuevo balance (inicial + total pagado -  cr\'edito solicitado)
+        Ej:
+        \begin{verbatim}
+        Cuenta (-1 para terminar): 100
+        Balance al 1 del mes: 5394
+        Total pagado: 1000
+        Credito solicitado: 500
+        Limite de credito: 5500
+        ****
+        LIMITE EXCEDIDO:
+        Cuenta: 100
+        Limite de credito: 5500
+        Balance: 5894
+        ****
+
+
+        Cuenta (-1 para terminar): 233
+        Balance al 1 del mes: 1000
+        Total pagado: 123
+        Credito solicitado: 321
+        Limite de credito: 1500
+        
+
+        Cuenta (-1 para terminar): -1
+        \end{verbatim}
+
+    \item Una f\'abrica que produce productos qu\'imicos para la industria pl\'astica paga a sus empleados de venta
+        por comisi\'on. La persona recibe 1.000.000 por mes, m\'as 9\% de comisi\'on sobre el total de sus ventas. Ej.
+        Si el vendedor A vende por valor de 5.000.000, su salario es: 1.000.000 m\'as 450.000. Escribir un programa que 
+        recibiendo las ventas por cada vendededor, calcule su salario final.
+
+    \item El inter\'es en un prestamo se calcula como:  $int = monto \times tasa \times \frac{dias}{365}$. Escribir un programa
+        que  dado un monto solicitado, calcule el costo total del prestamo al final del ciclo.
+
+    \item Desarrollar un programa que caclule el pago a empleados. La empresa paga tiempo total a las primeras 40 horas trabajadas
+        por el empleado y tiempo y medio por cada hora sobre las primeras 40. El programa debe recibir el n\'umero total de horas 
+        trabajas y la tarifa horaria por cada empleado.
+
+    \item Escribir un programa que imprima n\'umeros del 1 al 10 con 3 espacios en medio de cada uno.
+
+    \item Escribr un programa que encuentre el m\'aximo en una serie de n\'umeros. El programa debe leer
+        del usuario los n\'umeros y luego indicar el mayor. 
+
+    \item Escribir un programa que imprima la siguiente tabla:
+        \begin{verbatim}
+        N   10*N    100*N   1000*N
+        1   10      100     1000
+        2   20      200     2000
+        3   30      300     3000
+        4   40      400     4000
+        5   50      500     5000
+        6   60      600     6000
+        7   70      700     7000
+        8   80      800     8000
+        9   90      900     9000
+        10  100     1000    10000
+        \end{verbatim}
+
+    \item Esribir un programa que use un loop para imprimir:
+        \begin{verbatim}
+        A   A+2 A+3 A+4
+        3   5   6   7
+        6   8   9   10
+        9   11  12  13
+        12  14  15  16
+        15  17  18  19
+        \end{verbatim}
+
+    \item Escribir un programa que verifique si un n\'umero es capicua.
+    \item Imprimir el n\'umero decimal codificado por un n\'umero binario.
+    \item Podemos determinar la velocidad de nuestra computadora. Escribir un programa
+        que cuente de 1 a 300,000,000 (trescientos millones) de 1 a 1. Cada vez que se llegue a m\'ultiplos de 100,000,000
+        imprimir el n\'umero en pantalla. Determinar el tiempo que toman 100,000,000 de iteraciones con el reloj. Calcular
+        cuando tomar\'ia 1,000,000,000,000 iteraciones.
+
+    \item Imprimir m\'ultiplos de 2 en un ciclo infinito. Antes de correr el programa, ?`que va a pasar?
+    \item Escribir un programa qeu imprima el di\'ametro, circunferencia y \'area de un circulo de radio R. 
+    \item Escribir un programa que determine si 3 valores dados pueden ser usados para representar un tri\'angulo. Ej. 2, 1 y 4 no pueden pero
+        1, 1 y 1 si pueden.
+    \item Escribir un programa que determine si 3 valores dados pueden ser usados para representar un tri\'angulo rect\'angulo. Ej. 2, 1 y 4 no pueden pero
+        1, 1 y 1 si pueden.
+    \item El factorial de un n\'umero, escrito $n!$ se define como: $n! = n.(n-1).(n-2).\ldots.1$ y $0! = 1$. El factorial no est\'a definido para n\'umeros negativos.
+        \begin{itemize}
+            \item Escribir un programa que calcule el factorial de un n\'umero.
+            \item Escribir un programa que estime la consntante $e$ (el n\'umero de euler) con la f\'ormula: $e = 1 + \frac{1}{1!} + \frac{1}{2!} + \ldots$
+            \item Escribir un programa que calcule $e^x$ por medio de $ e^x = 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots $
+        \end{itemize}
+        ?`Qu\'e dificultad puede surgir al calcular el factorial?
+\end{enumerate}
+
+Desaf\'ios:
+\begin{enumerate}
+    \item Buscar en internet la poblaci\'on actual mundial y su tasa de crecimiento. Escribir un programa que determine la cantidad de gente
+        en funci\'on a estos par\'ametros en dos, tres, cinco y diez a\~nos.
+    \item Existen monitores cardiacos que pueden ser utilizados mientras uno se ejercita. De acuerdo a la AHA (Americal Heart Association) la f\'ormula
+        para determinar el ritmo m\'aximo es 220 menos tu edad en a\~nos (Consulte a su m\'edico antes de modificar su plan de ejercicio o empezar a hacer ejercicio). La AHA estima que el ritmo ideal es 50-85\% del ritmo m\'aximo. Crear un programa que lea el d\'ia, mes y a\~no de nacimiento de la persona y caclque la edad de la persona, el ritmo m\'aximo y el ritmo ideal.
+    \item Escribir un programa que encripte informaci\'on. La aplicaci\'on va a recibir un n\'umero de 4 d\'igitos. Cada d\'idigito debe ser reemplazado con el resto de la suma del d\'igito original m\'as 7 dividido por 10. Imprimir el n\'umero encriptado. Escribir un programa separado que reciba un n\'umero encriptado y lo desencripte.  A modo de ejemplo, el usuario ingresa 3. Este n\'umero debe ser reemplazado por 0, porque: 3+7 = 10, 10\%10 = 0.
+\end{enumerate}
+\end{document}
